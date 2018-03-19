@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+{% block content %}
+
+    <div class="alert form-alert"></div>
+    <form method='post' class='feedback-form'>
+        <input class="form-control" type="text" placeholder="Название" name="title" value="{{ news.title }}"/>
+        <input type="hidden" name="news_id" value="{{ news.id }}">
+        <br>
+        <textarea class="form-control" placeholder="Новость" name="description" rows="10">{{  news.description }}</textarea>
+        <br>
+        <button type="submit" class="btn btn-primary">Отредактировать</button>
+    </form>
+{% endblock %}

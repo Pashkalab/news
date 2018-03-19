@@ -1,0 +1,26 @@
+parameters:
+    database_user: 'root'
+    database_name: 'news'
+    database_host: 'localhost'
+    database_password: ~
+    uploads_dir: 'uploads'
+    noreply_email: 'noreply@mvc.com'
+
+
+routing:
+
+    homepage:
+        pattern: /
+        controller: NewsController
+        action: indexAction
+    
+    news_item:
+        pattern: /{id}
+        controller: NewsController
+        action: showAction
+        parameters: 
+            id: '[0-9]+'
+    edit:
+        pattern: /edit
+        controller: NewsController
+        action: feedbackAction
